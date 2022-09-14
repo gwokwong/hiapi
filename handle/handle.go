@@ -11,7 +11,6 @@ import (
 func handle(ctx *gin.Context) {
 	fmt.Println("ctx---->")
 	fmt.Println(ctx)
-
 	method := ctx.Request.Method
 	switch method {
 	case "GET":
@@ -30,5 +29,4 @@ func handle(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{
 		"message": "pong",
 	})
-
 }
