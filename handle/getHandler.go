@@ -49,9 +49,9 @@ func preHandle(ctx *gin.Context) {
 }
 
 //get方法的参数执行逻辑
-func HandleForGet(ctx *gin.Context) {
+func GetHandler(ctx *gin.Context) {
 	reqJson := make(map[string]interface{})
-	ctx.BindJSON(&reqJson)
+	ctx.ShouldBind(&reqJson)
 	fmt.Println(reqJson)
 	//解析出数据进行sql拼接
 	//1、获取json
@@ -66,8 +66,7 @@ func HandleForGet(ctx *gin.Context) {
 	}
 
 	result := qc.response()
-	fmt.Println("result is--->")
-	fmt.Println(result)
+	fmt.Println("result is--->", result)
 	ctx.JSON(http.StatusOK, result)
 }
 

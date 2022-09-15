@@ -2,6 +2,7 @@ package db
 
 import (
 	"database/sql"
+	"fmt"
 	"log"
 	"strings"
 
@@ -167,6 +168,7 @@ func Insert(sql string, args ...interface{}) (int64, error) {
 	if err != nil {
 		return -1, err
 	}
+	fmt.Println("执行到这里")
 	return id, nil
 }
 
