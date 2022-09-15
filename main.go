@@ -18,7 +18,14 @@ func main() {
 	r.POST("/post", func(ctx *gin.Context) {
 		handle.PostHandler(ctx)
 	})
-	// 还有其他的方法
+
+	r.POST("/delete", func(ctx *gin.Context) {
+		handle.DeleteHandler(ctx)
+	})
+
+	r.POST("/put", func(ctx *gin.Context) {
+		handle.PutHandler(ctx)
+	})
 
 	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
